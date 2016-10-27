@@ -1,43 +1,39 @@
 #include <string>
+#include "book.h"
 using namespace std;
-class book {
-public:
-	book* next;
-	book* prev;
-	string isbn, name, author;
-	book(string i, string n, string a) {
-		isbn = i;
-		name = n;
-		author = a;
-		next = NULL;
-		prev = NULL;
-	}
 
-	book* getNext() const {
-		return next;
-	}
+book::book(string i, string n, string a) {
+	isbn = i;
+	name = n;
+	author = a;
+	next = NULL;
+	prev = NULL;
+}
 
-	book* getPrev() const {
-		return prev;
-	}
+book* book::getNext() const {
+	return next;
+}
 
-	void setNext(book* c) {
-		next = c;
-	}
+book* book::getPrev() const {
+	return prev;
+}
 
-	void setPrev(book* c) {
-		prev = c;
-	}
+void book::setNext(book* c) {
+	next = c;
+}
 
-	string getName() {
-		return name;
-	}
+void book::setPrev(book* c) {
+	prev = c;
+}
 
-	string getISBN() {
-		return isbn;
-	}
+string book::getName() {
+	return name;
+}
 
-	string getAuthor() {
-		return author;
-	}
+string book::getISBN() {
+	return isbn;
+}
+
+string book::getAuthor() {
+	return author;
 };

@@ -1,7 +1,7 @@
 #include <string>
 #include <iostream>
 #include <assert.h>
-#include "book.cpp"
+#include "book.h"
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -20,7 +20,7 @@ void printSTE(book* first) {
 	while (first != NULL)
 	{
 		printbookDetails(first);
-		first = first->next;
+		first = first->getNext();
 	}
 }
 
@@ -28,7 +28,7 @@ void printETS(book* last) {
 	while (last != NULL)
 	{
 		printbookDetails(last);
-		last = last->prev;
+		last = last->getPrev();
 	}
 }
 
@@ -70,11 +70,11 @@ book* searchBookByISBN(string ISBN, book* first) {
 		string compared = first->getISBN();
 		if (ISBN.compare(compared))
 		{
-			return first->prev;
+			return first->getPrev();
 		}
 		else
 		{
-			first = first->next;
+			first = first->getNext();
 		}
 	}
 	return NULL;
@@ -85,11 +85,10 @@ void main() {
 	
 	//5 will be grand for now
 	book* hamlet = new book("9781932606409", "Hamlet", "William Shakespear");
-	book* one984 = new book("9781933306409", "1984", "George R Orwell");
+	book* one984 = new book("9780141182957", "1984", "George R Orwell");
 	hamlet->setNext(one984);
 	one984->setPrev(hamlet);
-	printSTE(hamlet);
-	book* toPrint = searchBookByISBN("9781933306409", hamlet);
+	book* toPrint = searchBookByISBN("9780141182957", hamlet);// search notworking, retrning null
 	printbookDetails(toPrint);
 	/*
 	while (true)

@@ -121,6 +121,9 @@
     <ClCompile Include="book.cpp" />
     <ClCompile Include="leabharlann.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="book.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
