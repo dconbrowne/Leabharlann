@@ -120,13 +120,12 @@
   <ItemGroup>
     <ClCompile Include="book.cpp" />
     <ClCompile Include="leabharlann.cpp" />
+    <ClCompile Include="user.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Admin.h" />
     <ClInclude Include="book.h" />
-    <ClInclude Include="Guest.h" />
+    <ClInclude Include="user.h" />
     <ClInclude Include="leabharlann.h" />
-    <ClInclude Include="RegisteredUser.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

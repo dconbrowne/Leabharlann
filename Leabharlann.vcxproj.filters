@@ -21,6 +21,9 @@
     <ClCompile Include="book.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="user.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="book.h">
@@ -29,13 +32,7 @@
     <ClInclude Include="leabharlann.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Guest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RegisteredUser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Admin.h">
+    <ClInclude Include="user.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

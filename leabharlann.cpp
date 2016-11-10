@@ -169,13 +169,20 @@ void main() {
 	//3 - What's the structure behind this list, to make it as functional as possible?
 
 	//5 will be grand for now
+	book* firstBook;//////////////////////// check functionality
+	book * lastBook;////////////////////////
 	book* hamlet = new book("9781932606409", "Hamlet", "William Shakespeare");
 	book* one984 = new book("9780141182957", "1984", "George R Orwell");
 	hamlet->setNext(one984);
 	one984->setPrev(hamlet);
+	firstBook = hamlet;
+	lastBook = one984;
 	printPartialSearch("978", hamlet);
 	while (true)
 	{
+		//Please select a user account.
+
+
 		cout << "What Would you like to do? \n1 - Add\n2 - Remove\n3 - Print List of books\n4 - Search for book\n5 - Exit\n\n";
 		int c1;
 		cin >> c1;
@@ -193,12 +200,12 @@ void main() {
 			getline(cin, bookAuthor);
 
 			book* newBook = new book(bookISBN, bookName, bookAuthor);
-			addBookInFront(newBook, one984);
+			addBookInFront(newBook, lastBook);
 			cout << "Would you like to view the new booklist?\n N=0, Y=1" << endl;
 			while (true) {
 				cin >> c1;
 				if (c1 == 1) {
-					printSTE(hamlet);
+					printSTE(firstBook);
 					break;
 				}
 				if (c1 == 0) {
@@ -212,7 +219,7 @@ void main() {
 			cout << "Please enter the ISBN of the book you wish to delete." << endl;
 			string removeByISBN = "";
 			cin >> removeByISBN;
-			book* toRemove = searchBookByISBN(removeByISBN, hamlet);
+			book* toRemove = searchBookByISBN(removeByISBN, firstBook);
 			if (toRemove != NULL) {
 				cout << "The book " << toRemove->getName() << " removed." << endl;
 				removeBook(toRemove);
